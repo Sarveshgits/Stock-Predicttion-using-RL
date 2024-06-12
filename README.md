@@ -29,9 +29,10 @@ from matplotlib import pyplot as plt
 ```
 ## DataFrame
 
-Use pandas to read the csv file, and we need to change the dtype of 'Date' columnn from object to datetime and also set it as index
+Use pandas to read the csv file, and we need to change the dtype of 'Date' columnn from object to datetime and also set it as index.
+Visit this link to download the dataframe: https://www.marketwatch.com/investing/stock/gme/download-data?startDate=11/1/2019&endDate=03/12/2021
 ```
-df = pd.read_csv("E:\RL\AnyTrading\Download Data - STOCK_US_XNYS_GME.csv")
+df = pd.read_csv("data/gme-date.csv")
 df['Date'] =pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 ```
