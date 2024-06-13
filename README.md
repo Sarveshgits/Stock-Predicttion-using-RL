@@ -54,7 +54,33 @@ except Exception as e:
 env = gym.make('stocks-v0',df=df, frame_bound= (5,200), window_size=5)
 ```
 
-##Training the model
+## Reward function
+
+We are using the default reward function of the StocksEnv here.
+
+```
+def _calculate_reward(self, action):
+        step_reward = 0
+
+        trade = False
+        if (
+            (action == Actions.Buy.value and self._position == Positions.Short) or
+            (action == Actions.Sell.value and self._position == Positions.Long)
+        ):
+            trade = True
+
+        if trade:
+            current_price = self.prices[self._current_tick]
+            last_trade_price = self.prices[self._last_trade_tick]
+            price_diff = current_price - last_trade_price
+
+            if self._position == Positions.Long:
+                step_reward += price_diff
+
+        return step_reward
+
+```
+## Training the model
 
 Reset the Env, Take a random action from the action space, use the action to get next_state, reward and other info. Then we are making a Dummy vectorized environment to loop through the environment multiple time if we want but here we are going to do it once. Then we are going to use A2C algorithm from the gym, and we are using a MlpPolicy(which tries to predict a probability distribution of actions to be taken from that step).
 
