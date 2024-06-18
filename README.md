@@ -1,4 +1,4 @@
-# Stock-Prediction-using-RL
+# Stock-Prediction-using-Reinforcement-Learning
 
 ## Description
 
