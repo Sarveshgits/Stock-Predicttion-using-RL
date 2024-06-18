@@ -1,8 +1,8 @@
-# Stock-Predicttion-using-RL
+# Stock-Prediction-using-RL
 
 ## Description
 
-This project implements a custom stock trading environment using gym-anytrading for reinforcement learning. The goal is to create an agent that can maximize profits by buying and selling stocks based on historical price data. I have used GME Stocks data from MarketWatch of the previous 1 year(June 2023- June 2024). You can also import given datasets in the respective envirnoments you are using.
+This project implements a custom stock trading environment using gym-anytrading environment for reinforcement learning. The goal is to create an agent that can maximize profits by buying and selling stocks based on historical price data. I have used GME Stocks data from MarketWatch of the previous 1 year(June 2023- June 2024). You can also import given datasets in the respective envirnoments you are using.
 
 ## Installation
 
